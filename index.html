@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Homework: Cool Submissions</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <input type="text" required v-model="name" placeholder="Enter your Name"/><br>
+  <input type="email" required v-model="email" placeholder="Enter your Email"/><br>
+  
+  <div class="submit">
+    {{submit}}
+  </div>
+   <div class="message">{{message}}</div>
+
+   <div v-for="list in lists">
+       <div class="list">
+         <div v-on:click="list.flipped=!list.flipped" v-show="!list.flipped" class="side1"> 
+           
+           <h1>{{list.name}}</h1>
+         </div>
+         <div v-on:click="list.flipped=! list.flipped" v-show="list.flipped" class="side2">
+           <h1>{{list.codename}}</h1>
+         </div>
+     </div> 
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
